@@ -13,7 +13,7 @@ module DiscordContainers
     chain = MarkovPolo::Chain.new
 
     r.table('logs').run(connection).each do |e|
-      chain << e.content
+      chain << e["content"]
     end
 
     message do |event|
